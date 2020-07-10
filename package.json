@@ -1,0 +1,21 @@
+{
+  "name": "create-babel-typescript",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "bin": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "Anders D. Johnson",
+  "license": "ISC",
+  "repository": "AndersDJohnson/create-babel-typescript",
+  "funding": "https://github.com/sponsors/AndersDJohnson",
+  "files": [
+    "index.js"
+  ],
+  "dependencies": {
+    "base-create": "^1.2.0"
+  }
+}
