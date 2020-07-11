@@ -11,25 +11,41 @@ create("babel-typescript", {
     "@babel/preset-env",
     "@babel/preset-typescript",
     "@babel/plugin-transform-runtime",
-    "typescript"
+    "typescript",
+    "@andersdjohnson/tsconfig",
   ],
   package: {
     main: "dist/index.js",
+    types: "dist/index.d.ts",
     keywords: ["create-babel-typescript"],
     scripts: {
       start: "node .",
       build: "babel -x .ts,.tsx src --out-dir dist",
       "build:watch": "npm run build -- --watch",
+      "build:types": "tsc --emitDeclarationOnly",
+      "build:types:watch": "npm run build:types -- --watch",
     },
   },
   files: [
     {
       path: "babel.config.json",
       contents: {
-        "presets": ["@babel/preset-env", "@babel/preset-typescript"],
-        "plugins": ["@babel/plugin-transform-runtime"]
-      }
+        presets: ["@babel/preset-env", "@babel/preset-typescript"],
+        plugins: ["@babel/plugin-transform-runtime"],
+        sourceMap: true,
+      },
     },
-    "src/index.ts"
-  ]
+    {
+      path: "tsconfig.json",
+      contents: {
+        extends: "@andersdjohnson/tsconfig",
+        include: ["src"],
+        compilerOptions: {
+          outDir: "dist",
+          target: "esnext",
+        },
+      },
+    },
+    "src/index.ts",
+  ],
 });
