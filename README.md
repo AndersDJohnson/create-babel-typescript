@@ -1,6 +1,6 @@
 # create-babel-typescript
 
-Like `create-react-app`, but for a basic Babel TypeScript setup.
+Like `create-react-app` and [create-babel](https://github.com/AndersDJohnson/create-babel), but for a basic Babel TypeScript setup.
 
 Create an app in a new `./my-app` directory:
 
