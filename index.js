@@ -2,7 +2,7 @@
 
 const create = require("base-create");
 
-create("babel-typescript", {
+create({
   dependencies: ["@babel/runtime"],
   devDependencies: [
     "@babel/core",
