@@ -21,7 +21,8 @@ create({
     keywords: ["create-babel-typescript"],
     scripts: {
       start: "node .",
-      build: "babel -x .ts,.tsx src --out-dir dist",
+      "build": "npm run build:types && npm run build:ts",
+      "build:ts": "babel -x .ts,.tsx src --out-dir dist",
       "build:watch": "npm run build -- --watch",
       "build:types": "tsc --emitDeclarationOnly",
       "build:types:watch": "npm run build:types -- --watch",
